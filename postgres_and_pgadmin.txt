@@ -1,0 +1,24 @@
+to uninstall
+sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
+
+
+to install
+https://medium.com/@Josylad/how-to-install-postgresql-on-ubuntu-linux-mac-5e08b09b3fb9
+
+
+
+to start postgres
+sudo service postgresql start
+sudo -u postgres createuser --superuser $USER
+sudo -u postgres createdb $USER
+touch .psql_history
+psql
+
+
+
+to create user
+https://docs.rapidminer.com/9.4/server/install/database_setup/creating_postgres_db.html
+
+
+
+

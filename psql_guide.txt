@@ -1,0 +1,17 @@
+COPY myTable FROM '/path/to/file/on/server' ( FORMAT CSV, DELIMITER('|') );
+
+add utf8.csv to the text file by : iconv -c -t utf8 filename.csv >filename.utf8.csv
+
+CREATE TABLE president_speeches (
+sotu_id serial PRIMARY KEY,
+president varchar(100) NOT NULL,
+title varchar(250) NOT NULL,
+speech_date date NOT NULL,
+speech_text text NOT NULL,
+search_speech_text tsvector
+);
+COPY president_speeches (president, title, speech_date, speech_text)
+FROM 'C:\YourDirectory\sotu-1946-1977.csv'
+WITH (FORMAT CSV, DELIMITER '|', HEADER OFF, QUOTE '@');
+
+
